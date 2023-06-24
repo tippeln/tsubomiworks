@@ -1,5 +1,8 @@
 .main header {
-  padding: 0 0 20px;
+  /* padding: 0 0 20px; */
+  visibility: hidden;
+  height: 0px;
+  /* padding:0px; */
 }
 .main footer {
   border-top: 1px dashed #888;
@@ -28,7 +31,11 @@ h1{
   visibility: hidden;
   height: 0px;
 }
-header{
+/* header {
   visibility: hidden;
   height: 0px;
+  padding:0px;
+} */
+div.container astro-SCKKX6R4 {
+  padding-top:0px!important;
 }
