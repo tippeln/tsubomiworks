@@ -65,6 +65,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     <meta name="twitter:description" content={siteDescription} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage || siteOGImage} />
+    <link rel="icon" href="../../public/img/favicon.ico">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
@@ -199,10 +200,14 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 
   main header {
     padding: 20px 0 20px;
+    visibility: hidden;
+    height: 0px;
   }
   main header h1 {
     font-weight: 700;
     color: #333;
+    visibility: hidden;
+    height: 0px;    
   }
   main header h1 a {
     display: block;
@@ -337,7 +342,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     margin: 0;
     color: var(--fg);
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 700;    
   }
 
   h2 {
@@ -440,4 +445,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     padding: 0.5rem 1rem;
     line-height: 1.2rem;
   }
+  div.container astro-SCKKX6R4 {
+  padding-top:0px!important;
+ }
 </style>
