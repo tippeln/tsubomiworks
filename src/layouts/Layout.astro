@@ -158,17 +158,19 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     flex: 1;
     order: 1;
     justify-content: space-between;
+    /* padding-left: 300px; */
   }
   @media (max-width: 640px) {
     main {
       order: 1;
+
     }
   }
 
   aside {
     order: 1;
-    width: 500px;
-    padding: var(--asidePaddingTop) 20px 20px;
+    width: 35%;
+    padding: var(--asidePaddingTop) 20px 50px;
     background-color: #fff;
   }
   aside h3 {
@@ -195,8 +197,10 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 
   div.content {
     padding-bottom:0px;
-    width:60%;
+    display: block;
+    width:65%;
     margin:0 auto;
+
   }
   @media (max-width: 640px) {
     div.content {
