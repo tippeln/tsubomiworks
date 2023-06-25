@@ -22,19 +22,19 @@ const siteURL = new URL(getNavLink(path), Astro.site).toString()
 const siteOGImage = new URL(getStaticFilePath('/default-og-image.png'), Astro.site)
 
 let coverImageURL: string
-if (database.Cover) {
-  if (database.Cover.Type === 'external') {
-    coverImageURL = database.Cover.Url
-  } else if (database.Cover.Type === 'file') {
-    try {
-      coverImageURL = filePath(new URL(database.Cover.Url))
-    } catch (err) {
-      console.log('Invalid DB cover image URL')
-    }
-  }
-}
-// coverImageURL = "https://www.tsubomiworks.com/img/logo.png"  
-// coverImageURL = "../../public/img/logo.png"  
+// if (database.Cover) {
+//   if (database.Cover.Type === 'external') {
+//     coverImageURL = database.Cover.Url
+//   } else if (database.Cover.Type === 'file') {
+//     try {
+//       coverImageURL = filePath(new URL(database.Cover.Url))
+//     } catch (err) {
+//       console.log('Invalid DB cover image URL')
+//     }
+//   }
+// }
+// coverImageURL = "/img/title_log.jpg""  
+coverImageURL = "/img/title_log.jpg"  
 
 let customIconURL: string
 if (database.Icon && database.Icon.Type === 'file') {
@@ -90,8 +90,8 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
       </a>
         <div class="content">
           <header>
-            <h1>
-              <a href={getNavLink('/')}>
+            <h1>{database.Title}
+              <!-- <a href={getNavLink('/')}>
                 {
                   database.Icon && database.Icon.Type === 'emoji' ? (
                     <>
@@ -112,7 +112,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
                     database.Title
                   )
                 }
-              </a>
+              </a> -->
             </h1>
             <div class="description">
               {database.Description}
@@ -145,6 +145,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 <style define:vars={{ asidePaddingTop }}>
   .container {
     display: flex;
+
     min-height: 100vh;
   }
   @media (max-width: 640px) {
@@ -157,6 +158,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
     flex: 1;
     order: 1;
     justify-content: space-between;
+    width:500px;
   }
   @media (max-width: 640px) {
     main {
@@ -166,7 +168,7 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
 
   aside {
     order: 2;
-    width: 300px;
+    width: 400px;
     padding: var(--asidePaddingTop) 20px 20px;
     background-color: #fff;
   }
@@ -193,7 +195,9 @@ const asidePaddingTop = coverImageURL ? '200px' : '60px'
   }
 
   div.content {
-    padding: 0px 40px 20px;
+    /* padding: 0px 40px 20px; */
+    width:80%;
+    margin:0 auto;
   }
   @media (max-width: 640px) {
     div.content {
